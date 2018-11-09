@@ -326,3 +326,12 @@ spec:
       resources:
         requests:
           storage: "{{ .Values.Storage }}"
+      selector:
+{{- if .Values.persistence.matchLabels }}
+        matchLabels:
+{{ toYaml .Values.persistence.matchLabels | indent 10}
+{{- end -}}
+{{- if .Values.persistence.matchExpressions }}
+        matchExpressions:
+{{ toYaml .Values.persistence.matchExpressions | indent 10}
+{{- end -}}          
