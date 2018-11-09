@@ -68,3 +68,6 @@ Secure:
 JoinExisting: []
 # Set a locality (e.g. "region=us-central1,datacenter=us-centra1-a") if you're doing multi-cluster so data is distributed properly
 Locality: ""
+persistence:
+  matchLabels:
+    component: "cockroachdb"
